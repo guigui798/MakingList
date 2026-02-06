@@ -1,0 +1,306 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu{
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 4px 6px 2px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: rgb(51, 51, 51);
+}
+.filtro{
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    background-color: var(--tipo_tarefa);
+    color: rgb(51, 51, 51);
+    transition: background-color 0.5s;
+}
+.filtro:hover{
+    background-color: rgba(147, 147, 147, 0.486);
+}
+
+.selecionado{
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    background-color: rgb(201, 145, 85);
+    color: rgb(51, 51, 51);
+    transition: background-color 0.5s ease;
+}
+body{
+    position: relative;
+    gap: 100px;
+}
+
+.tarefas{
+    gap:20px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.titulo_tarefa, .titulo_tarefa_responsivo{
+    font-weight: bolder;
+    font-size: 1rem;
+    color: black;
+}
+.tarefa-input{
+    position: relative;
+    border: none;
+    padding: 7px;
+    width: 80%;
+}
+.tarefa-input:focus{
+    outline: none;
+}
+.tarefa{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.359);
+    width: 90%;
+    padding: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns:auto auto;
+    align-items: center;
+}
+#task::placeholder{
+    color: rgb(93, 92, 92);
+}
+.excluir{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(96, 160, 33);
+    cursor: pointer;
+    border-radius: 50%;
+    justify-self: end;
+    transition: background-color 0.5s ;
+    animation: none 0.8s ;
+    animation-iteration-count: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.excluir::after{
+    content: '✔';
+    color: rgb(96, 160, 33);
+    font-weight: bold;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.excluir:hover::after{
+    opacity: 0.8;
+}
+@keyframes concluir {
+    0%{
+        transform: scale(1);
+
+    }
+    40%{
+         transform: scale(1.2);
+         background-color: rgba(66, 107, 24, 0.547);
+        
+    }
+    100%{
+       transform: scale(0.8);
+    }
+}
+
+.inputs{
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border: 1px solid rgb(125, 124, 124);
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+}
+.descricao{
+    font-size: 0.8rem;
+    color: gray;
+}
+.tipos_tarefa_container{
+    display: flex;
+    gap:20px;
+    padding: 5px;
+}
+.tipos_tarefa_container label{
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    background-color: var(--tipo_tarefa);
+    color: rgb(51, 51, 51);
+    transition: background-color 0.5s ease;
+}
+.tipos_tarefa_container label:hover{
+    background-color: rgb(201, 145, 85);
+}
+.tipos_tarefa_container input:checked + label{
+    background-color: rgb(201, 145, 85);
+}
+.confirmar, .confirmar_responsivo{
+    cursor: pointer;
+    padding: 7px;
+    width: fit-content;
+    border: 1px solid gray;
+    border-radius: 7px;
+    justify-self: end;
+    margin-right: 10px;
+    transition: background-color 0.5s ;
+}
+.confirmar:hover{
+    background-color: rgba(137, 137, 137, 0.523);
+}
+.organizacao_tarefas{
+    display: none;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+.tipos_container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(148, 148, 148);
+    padding: 10px;
+    border-radius: 10px;
+        
+}
+.opcoes_tarefas{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.467);
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    color: rgb(73, 73, 73);
+    display: flex;
+    justify-content: space-between;
+}
+.mostrar{
+    background-color: rgb(201, 145, 85);
+    width: 30px;
+    position: relative;
+}
+.tarefa_filtrada{
+    border-bottom: 2px solid rgba(0, 0, 0, 0.359);
+    width: 80%;
+    padding: 10px;
+    position: relative;
+    display: grid;
+    grid-template-columns:auto auto;
+    align-items: center;
+    font-size: 0.9rem;
+    color: grey;
+}
+.container_tarefa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+.add_tarefa_responsivo{
+    background-color: rgb(231, 56, 56);
+    padding: 10px;
+    border-radius: 7px;
+    display: block;
+    position: relative;
+    width: 150px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.add_tarefa_responsivo::after{
+    content: '+';
+    border-radius: 7px;
+    color: white;
+    position: relative;
+    display: block;
+}
+.inputs_responsivo{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+.inputs_responsivo_container{
+    background-color: rgba(128, 128, 128, 0.463);
+    position: absolute;
+    width:100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+}
+.tipos_tarefa_container_responsivo{
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap:20px;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+.tipos_tarefa_container_responsivo label{
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 7px;
+    background-color: var(--tipo_tarefa);
+    color: rgb(51, 51, 51);
+    transition: background-color 0.5s ease;
+}
+.tipos_tarefa_container_responsivo label:hover{
+    background-color: rgb(201, 145, 85);
+}
+.tipos_tarefa_container_responsivo input:checked + label{
+    background-color: rgb(201, 145, 85);
+}
+@media (max-width: 480px) {
+
+    .add_tarefa_responsivo{
+        background-color: rgb(231, 56, 56);
+        padding: 10px;
+        border-radius: 7px;
+        color: white;
+        display: flex;
+    }
+    .inputs{
+    display: none;
+    grid-template-rows: auto auto auto auto;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border: 1px solid rgb(125, 124, 124);
+    padding: 10px;
+    gap: 10px;
+    border-radius: 10px;
+}
+}

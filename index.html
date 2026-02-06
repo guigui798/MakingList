@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div class="inputs_responsivo_container">
+                <div class="inputs_responsivo">
+                    <input type="text" class="tarefa-input titulo_tarefa_responsivo" id="task" placeholder="Adicionar tarefa">
+                    <input type="text" id="descricao-input" class="tarefa-input descricao_tarefa_responsivo" placeholder="Adicionar Descrição">
+                    <div class="tipos_tarefa_container_responsivo">
+                        <input type="radio" class="escola" id="school_r" name="tipo_r" hidden>
+                        <label for="school_r">Escola📚</label>
+                        <input type="radio" id="work_r" class="trabalho" name="tipo_r" hidden>
+                        <label for="work_r">Trabalho👔</label>
+                        <input type="radio" id="home_r" class="casa" name="tipo_r" hidden>
+                        <label for="home_r">Casa🏡</label>
+                        <input type="radio" id="lazer_r" class="lazer" name="tipo_r" hidden>
+                        <label for="lazer_r">Lazer🏖️</label>
+                        <input type="radio" id="outros_r" class="outros" name="tipo_r" hidden>
+                        <label for="outros_r">Outros ...</label>
+                    </div>
+                    <div class="confirmar_responsivo" onclick="addTarefaResponsivo()">criar</div>
+                </div> 
+            </div>
+
+    <div class="tudo">
+    </div>
+        <div class="menu">
+            <h1>Lista de Tarefas</h1>
+            <div class="filtro" onclick="filtrar()">mostrar por tipo</div>
+        </div>
+
+
+        <div class="tarefas">
+
+                <div class="add_tarefa_responsivo">
+                    <p>adicionar tarefa</p>
+                </div>
+
+            <div class="inputs">
+                <input type="text" class="tarefa-input titulo_tarefa"  placeholder="Adicionar tarefa">
+                <input type="text" class="tarefa-input descricao_tarefa" placeholder="Adicionar Descrição">
+                <div class="tipos_tarefa_container">
+                    <input type="radio" class="escola" id="school"  name="tipo" hidden>
+                    <label for="school" class="escola">Escola📚</label>
+                    <input type="radio" class="trabalho"id="work" name="tipo" hidden>
+                    <label for="work" class="trabalho">Trabalho👔</label>
+                    <input type="radio" class="casa"id="home" name="tipo" hidden>
+                    <label for="home" class="casa">Casa🏡</label>
+                    <input type="radio" class="lazer" id="lazer" name="tipo" hidden>
+                    <label for="lazer" class="lazer">Lazer🏖️</label>
+                    <input type="radio"  class="outros" id="outros" name="tipo" hidden>
+                    <label for="outros" class="outros">Outros ...</label>
+                </div>
+                <div class="confirmar" onclick="addTarefa()">criar</div>
+            </div>
+
+            <div class="organizacao_tarefas">
+
+                <div class="tarefas_casa tipos_container">
+                    <div class="opcoes_tarefas">
+                        <p>Casa🏡</p>
+                        
+                    </div>
+                </div>
+
+                <div class="tarefas_trabalho tipos_container">
+                    <div class="opcoes_tarefas">
+                        <p>Trabalho👔</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="tarefas_escola tipos_container">
+                    <div class="opcoes_tarefas">
+                        <p>Escola📚</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="tarefas_lazer tipos_container">
+                    <div class="opcoes_tarefas">
+                        <p>Lazer🏖️</p>
+                        
+                    </div>
+                </div>
+                
+                <div class="tarefas_outros tipos_container">
+                    <div class="opcoes_tarefas">
+                        <p>Outros ...</p>
+                        
+                    </div>
+                </div>
+            
+            
+            </div>
+            <div class="container_tarefa">
+                <div class="tarefa">
+                    exemplo
+                    <div class="excluir"></div>
+                    <div class="descricao">
+                        descrição da tarefa
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>
